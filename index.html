@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library App with 3D Glass Hover</title>
+  <script src="app.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.4s ease;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0px 6px 50px rgba(0, 255, 255, 0.7);
+    }
+
+    .neon-text {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+
+    .container {
+      background: #000000;
+      padding: 50px;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <div class="container mx-auto text-center">
+    <h1 class="text-4xl font-bold neon-text">3D Neon Glass Library</h1>
+
+    <div class="my-5">
+      <input type="text" id="bookTitle" class="bg-black text-white border-2 border-blue-400 px-3 py-2 rounded" placeholder="Enter book title">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="addBookBtn">Add Book</button>
+    </div>
+
+    <div id="bookList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"></div>
+  </div>
+
+</body>
+</html>
